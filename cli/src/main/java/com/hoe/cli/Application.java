@@ -5,6 +5,8 @@
  */
 package com.hoe.cli;
 
+import com.hoe.hero.Hero;
+
 /**
  *
  * @author netacademia
@@ -15,7 +17,9 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("HOE");
+        Hero hero = new Hero("PapaSmurf", ".....");
+        System.out.println(hero.getName());
+        System.out.println(hero.getDescription());
     }
     
 }
