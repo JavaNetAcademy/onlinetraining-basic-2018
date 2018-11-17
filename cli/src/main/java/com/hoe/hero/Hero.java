@@ -5,23 +5,29 @@
  */
 package com.hoe.hero;
 
-import com.hoe.cli.BasicData;
-
 /**
  *
  * @author netacademia
  */
-public class Hero extends BasicData{
-    private String description;
+public class Hero {
+    private String name,description;
 
     public Hero() {}
 
     public Hero(String name, String description) {
-        super(name);
+        this.name = name;
         this.description = description;
     }
     
-   
+    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getDescription() {
         return description;
