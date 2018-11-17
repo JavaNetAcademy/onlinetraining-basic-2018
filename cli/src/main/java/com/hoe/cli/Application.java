@@ -6,6 +6,7 @@
 package com.hoe.cli;
 
 import com.hoe.hero.Hero;
+import com.hoe.hero.HeroRepository;
 
 /**
  *
@@ -18,19 +19,18 @@ public class Application {
      */
     public static void main(String[] args) {
 
-        Hero[] heroes = new Hero[4];
-                
-        
-        heroes[0] = new Hero("PapaSmurf", ".....");
-        heroes[1] = new Hero("BrainySmurf", ".....");
-        heroes[2] = new Hero("HeftySmurf", ".....");
-        heroes[3] = new Hero("Smurfette", ".....");
+        HeroRepository hrepo = new HeroRepository();
+        hrepo.getHeroes()[0].setDescription("????????????????");
 
+        HeroRepository hrepo0 = new HeroRepository();
+
+        System.out.println(hrepo0.getHeroes()[0].getDescription());
+        
         byte i=0;
         do {            
-            System.out.println(heroes[i].getName());            
+            System.out.println(hrepo.getHeroes()[i].getName());            
             i++;         
-        } while (i<heroes.length);
+        } while (i<hrepo.getHeroes().length);
     }
     
 }
