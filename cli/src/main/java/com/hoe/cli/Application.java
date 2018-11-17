@@ -19,18 +19,15 @@ public class Application {
      */
     public static void main(String[] args) {
 
-        HeroRepository hrepo = new HeroRepository();
-        hrepo.getHeroes()[0].setDescription("????????????????");
+        HeroRepository.getHeroes()[0].setDescription("????????????????");
 
-        HeroRepository hrepo0 = new HeroRepository();
-
-        System.out.println(hrepo0.getHeroes()[0].getDescription());
+        System.out.println(HeroRepository.getHeroes()[0].getDescription());
         
         byte i=0;
         do {            
-            System.out.println(hrepo.getHeroes()[i].getName());            
+            System.out.println(HeroRepository.getHeroes()[i].getName());            
             i++;         
-        } while (i<hrepo.getHeroes().length);
+        } while (i<HeroRepository.getHeroes().length);
     }
     
 }
