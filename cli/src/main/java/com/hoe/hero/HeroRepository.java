@@ -10,10 +10,10 @@ package com.hoe.hero;
  * @author netacademia
  */
 public class HeroRepository {
-    private static Hero[] heroes ;
+    private static Hero[] heroes;
 
     static {
-        heroes = new Hero[4];
+        heroes = new Hero[4] ;
         heroes[0] = new Hero("PapaSmurf", ".....");
         heroes[1] = new Hero("BrainySmurf", ".....");
         heroes[2] = new Hero("HeftySmurf", ".....");
@@ -24,8 +24,5 @@ public class HeroRepository {
     public static Hero[] getHeroes() {
         return heroes;
     }
-
-
-    
     
 }
