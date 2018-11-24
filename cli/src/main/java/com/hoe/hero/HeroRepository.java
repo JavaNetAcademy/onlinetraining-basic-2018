@@ -5,11 +5,13 @@
  */
 package com.hoe.hero;
 
+import com.hoe.cli.BaseRepository;
+
 /**
  *
  * @author netacademia
  */
-public class HeroRepository {
+public class HeroRepository  extends BaseRepository<Hero>{
     private static Hero[] heroes;
 
     static {
@@ -21,8 +23,9 @@ public class HeroRepository {
     }
     
 
-    public static Hero[] getHeroes() {
-        return heroes;
+    @Override
+    public Hero[] getElements() {
+       return heroes;    
     }
     
 }

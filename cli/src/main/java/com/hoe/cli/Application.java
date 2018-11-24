@@ -18,16 +18,25 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        HeroRepository  hrepo = new HeroRepository();
+        
+        
+        SpeciesRepository  srepo = new SpeciesRepository();
 
-        HeroRepository.getHeroes()[0].setDescription("????????????????");
+        hrepo.getElements()[0].setDescription("????????????????");
 
-        System.out.println(HeroRepository.getHeroes()[0].getDescription());
+        System.out.println(hrepo.getElements()[0].getDescription());
         
         byte i=0;
         do {            
-            System.out.println(HeroRepository.getHeroes()[i].getName());            
+            System.out.println(hrepo.getElements()[i].getName());            
             i++;         
-        } while (i<HeroRepository.getHeroes().length);
+        } while (i<hrepo.getElements().length);
+        
+        for(Species s: srepo.getElements()){
+            System.out.println(s.getName());
+        }
     }
     
 }
