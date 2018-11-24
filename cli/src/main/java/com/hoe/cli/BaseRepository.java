@@ -10,5 +10,6 @@ package com.hoe.cli;
  * @author netacademia
  */
 public abstract class BaseRepository<T> {
+    protected T[] elements;
     public abstract T[] getElements();
 }

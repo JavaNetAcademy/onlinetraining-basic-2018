@@ -12,20 +12,31 @@ import com.hoe.cli.BaseRepository;
  * @author netacademia
  */
 public class HeroRepository  extends BaseRepository<Hero>{
-    private static Hero[] heroes;
-
+   
+    private static HeroRepository  instance;
+    
     static {
-        heroes = new Hero[4] ;
-        heroes[0] = new Hero("PapaSmurf", ".....");
-        heroes[1] = new Hero("BrainySmurf", ".....");
-        heroes[2] = new Hero("HeftySmurf", ".....");
-        heroes[3] = new Hero("Smurfette", ".....");
+        instance = new HeroRepository();
+    }
+
+    public static HeroRepository getInstance() {
+        return instance;
+    }
+    
+    
+    
+    {
+        elements = new Hero[4] ;
+        elements[0] = new Hero("PapaSmurf", ".....");
+        elements[1] = new Hero("BrainySmurf", ".....");
+        elements[2] = new Hero("HeftySmurf", ".....");
+        elements[3] = new Hero("Smurfette", ".....");
     }
     
 
     @Override
     public Hero[] getElements() {
-       return heroes;    
+       return elements;    
     }
     
 }

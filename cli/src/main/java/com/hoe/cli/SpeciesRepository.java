@@ -5,7 +5,6 @@
  */
 package com.hoe.cli;
 
-import com.hoe.hero.*;
 import com.hoe.cli.BaseRepository;
 
 /**
@@ -13,19 +12,28 @@ import com.hoe.cli.BaseRepository;
  * @author netacademia
  */
 public class SpeciesRepository  extends BaseRepository<Species>{
-    private static Species[] species;
-
+private static SpeciesRepository  instance;
+    
     static {
-        species = new Species[3] ;
-        species[0] = new Species("Smurf");
-        species[1] = new Species("Orc");
-        species[2] = new Species("Human");
+        instance = new SpeciesRepository();
+    }
+
+    public static SpeciesRepository getInstance() {
+        return instance;
+    }
+    
+
+    {
+        elements = new Species[3] ;
+        elements[0] = new Species("Smurf");
+        elements[1] = new Species("Orc");
+        elements[2] = new Species("Human");
     }
     
 
     @Override
     public Species[] getElements() {
-       return species;    
+       return elements;    
     }
     
 }

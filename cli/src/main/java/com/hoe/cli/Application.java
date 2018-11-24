@@ -5,7 +5,6 @@
  */
 package com.hoe.cli;
 
-import com.hoe.hero.Hero;
 import com.hoe.hero.HeroRepository;
 
 /**
@@ -19,22 +18,18 @@ public class Application {
      */
     public static void main(String[] args) {
         
-        HeroRepository  hrepo = new HeroRepository();
-        
-        
-        SpeciesRepository  srepo = new SpeciesRepository();
 
-        hrepo.getElements()[0].setDescription("????????????????");
+        HeroRepository.getInstance().getElements()[0].setDescription("????????????????");
 
-        System.out.println(hrepo.getElements()[0].getDescription());
+        System.out.println(HeroRepository.getInstance().getElements()[0].getDescription());
         
         byte i=0;
         do {            
-            System.out.println(hrepo.getElements()[i].getName());            
+            System.out.println(HeroRepository.getInstance().getElements()[i].getName());            
             i++;         
-        } while (i<hrepo.getElements().length);
+        } while (i<HeroRepository.getInstance().getElements().length);
         
-        for(Species s: srepo.getElements()){
+        for(Species s: SpeciesRepository.getInstance().getElements()){
             System.out.println(s.getName());
         }
     }
