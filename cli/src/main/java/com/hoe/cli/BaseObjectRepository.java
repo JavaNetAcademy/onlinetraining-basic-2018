@@ -9,6 +9,6 @@ package com.hoe.cli;
  *
  * @author netacademia
  */
-public interface BaseRepository<T> {
-    public T[] getElements();
+public class BaseObjectRepository<T>  {
+    protected T[] elements;
 }

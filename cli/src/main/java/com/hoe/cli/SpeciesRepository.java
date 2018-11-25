@@ -11,7 +11,7 @@ import com.hoe.cli.BaseRepository;
  *
  * @author netacademia
  */
-public class SpeciesRepository  extends BaseRepository<Species>{
+public class SpeciesRepository  extends BaseObjectRepository<Species> implements BaseRepository<Species>{
 private static SpeciesRepository  instance;
     
     static {

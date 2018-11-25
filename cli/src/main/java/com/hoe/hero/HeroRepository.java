@@ -5,13 +5,14 @@
  */
 package com.hoe.hero;
 
+import com.hoe.cli.BaseObjectRepository;
 import com.hoe.cli.BaseRepository;
 
 /**
  *
  * @author netacademia
  */
-public class HeroRepository  extends BaseRepository<Hero>{
+public class HeroRepository  extends BaseObjectRepository<Hero> implements BaseRepository<Hero>{
    
     private static HeroRepository  instance;
     

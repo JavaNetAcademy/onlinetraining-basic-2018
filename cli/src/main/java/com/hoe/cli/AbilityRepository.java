@@ -11,7 +11,7 @@ import com.hoe.cli.BaseRepository;
  *
  * @author netacademia
  */
-public class AbilityRepository  extends BaseRepository<Ability>{
+public class AbilityRepository  extends BaseObjectRepository<Ability> implements BaseRepository<Ability>{
    private static AbilityRepository  instance;
     static {
         instance = new AbilityRepository();
