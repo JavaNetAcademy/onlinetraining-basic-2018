@@ -11,7 +11,7 @@ import com.hoe.core.BasicData;
  *
  * @author netacademia
  */
-public class Ability extends BasicData{
+public class Ability extends BasicData implements Cloneable{
     private byte attack, protect, clever;
 
     public Ability() {
@@ -47,6 +47,12 @@ public class Ability extends BasicData{
     public void setClever(byte clever) {
         this.clever = clever;
     }
+
+    @Override
+    public Ability clone() throws CloneNotSupportedException {
+        return new Ability(name, attack, protect, clever);
+    }
+    
     
     
 }

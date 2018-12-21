@@ -5,5 +5,5 @@ package com.hoe.core;
  */
 public interface BaseFactory {
     public BasicData createEmpty();
-    public BasicData createWithDefaultDescription();
+    public BasicData createWithDefaultValues();
 }

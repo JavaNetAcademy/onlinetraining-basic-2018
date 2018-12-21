@@ -11,7 +11,7 @@ import com.hoe.core.BasicData;
  *
  * @author netacademia
  */
-public class Species extends BasicData{
+public class Species extends BasicData implements Cloneable{
 
     public Species() {
     }
@@ -20,5 +20,10 @@ public class Species extends BasicData{
         super(name);
     }
 
-     
+    @Override
+    public Species clone() throws CloneNotSupportedException {
+        return new Species(name);
+    }
+
+    
 }

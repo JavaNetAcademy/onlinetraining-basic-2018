@@ -14,6 +14,7 @@ import com.hoe.core.BaseRepository;
  */
 public class SpeciesRepository  extends BaseObjectRepository<Species> implements BaseRepository<Species>{
 private static SpeciesRepository  instance;
+private SpeciesFactory factory = new SpeciesFactory();
     
     static {
         instance = new SpeciesRepository();
@@ -26,9 +27,14 @@ private static SpeciesRepository  instance;
 
     {
         elements = new Species[3] ;
-        elements[0] = new Species("Smurf");
-        elements[1] = new Species("Orc");
-        elements[2] = new Species("Human");
+        elements[0] = factory.createEmpty();
+        elements[0].setName("Smurf");
+        
+        elements[1] = factory.createEmpty();
+        elements[1].setName("Orc");
+        
+        elements[2] = factory.createEmpty();
+        elements[2].setName("Human");
     }
     
 

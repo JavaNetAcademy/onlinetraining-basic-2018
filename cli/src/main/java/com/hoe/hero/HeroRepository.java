@@ -27,13 +27,13 @@ public class HeroRepository extends BaseObjectRepository<Hero> implements BaseRe
 
     {
         elements = new Hero[4];
-            elements[0] = factory.createWithDefaultDescription();
+            elements[0] = factory.createWithDefaultValues();
             elements[0].setName("PapaSmurf");
-            elements[1] = factory.createWithDefaultDescription();
+            elements[1] = factory.createWithDefaultValues();
             elements[1].setName("BrainySmurf");
-            elements[2] = factory.createWithDefaultDescription();
+            elements[2] = factory.createWithDefaultValues();
             elements[2].setName("HeftySmurf");
-            elements[3] = factory.createWithDefaultDescription();
+            elements[3] = factory.createWithDefaultValues();
             elements[3].setName("Smurfette");
     }
 

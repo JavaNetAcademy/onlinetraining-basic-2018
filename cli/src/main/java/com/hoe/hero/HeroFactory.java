@@ -19,7 +19,7 @@ public class HeroFactory implements BaseFactory{
     }
 
     @Override
-    public Hero createWithDefaultDescription() {
+    public Hero createWithDefaultValues() {
         try {
             return heroWithDefaultDescription.clone();
         } catch (CloneNotSupportedException ex) {
