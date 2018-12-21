@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.hoe.hero;
-
+ 
 import com.hoe.core.BaseObjectRepository;
 import com.hoe.core.BaseRepository;
 

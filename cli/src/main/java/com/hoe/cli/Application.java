@@ -5,6 +5,8 @@
  */
 package com.hoe.cli;
 
+import com.hoe.ability.AbilityRepository;
+import com.hoe.core.BaseRepository;
 import com.hoe.species.Species;
 import com.hoe.species.SpeciesRepository;
 import com.hoe.hero.HeroRepository;
@@ -18,10 +20,24 @@ public class Application {
     /**
      * @param args the command line arguments
      */
+    
+    
+    public static BaseRepository repositoryFactory(RepositoryType pType){
+        if(pType == RepositoryType.HERO)
+            return HeroRepository.getInstance();
+        else if(pType == RepositoryType.SPECIES)
+            return SpeciesRepository.getInstance();
+        else 
+            return AbilityRepository.getInstance();
+    }
+    
+    private static HeroRepository heroService = (HeroRepository) repositoryFactory(RepositoryType.HERO);
+    private static SpeciesRepository speciesService = SpeciesRepository.class.cast(repositoryFactory(RepositoryType.SPECIES));
+    
+    
     public static void main(String[] args) {
         
-
-        HeroRepository.getInstance().getElements()[0].setDescription("????????????????");
+       heroService.getElements()[0].setDescription("????????????????");
 
         System.out.println(HeroRepository.getInstance().getElements()[0].getDescription());
         
@@ -31,7 +47,7 @@ public class Application {
             i++;         
         } while (i<HeroRepository.getInstance().getElements().length);
         
-        for(Species s: SpeciesRepository.getInstance().getElements()){
+        for(Species s:speciesService.getElements()){
             System.out.println(s.getName());
         }
     }
