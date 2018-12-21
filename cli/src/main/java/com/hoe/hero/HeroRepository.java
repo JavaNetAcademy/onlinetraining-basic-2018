@@ -14,10 +14,9 @@ import com.hoe.core.BaseRepository;
  */
 public class HeroRepository extends BaseObjectRepository<Hero> implements BaseRepository<Hero> {
 
-    private static final Hero heroWithDefaultDescription = new Hero("", "DEF. DESC");
-
     private static HeroRepository instance;
-
+    private HeroFactory factory = new HeroFactory();
+    
     static {
         instance = new HeroRepository();
     }
@@ -28,26 +27,14 @@ public class HeroRepository extends BaseObjectRepository<Hero> implements BaseRe
 
     {
         elements = new Hero[4];
-        try {
-            elements[0] = heroWithDefaultDescription.clone();
+            elements[0] = factory.createWithDefaultDescription();
             elements[0].setName("PapaSmurf");
-        } catch (CloneNotSupportedException e) {
-        }
-        try {
-            elements[1] = heroWithDefaultDescription.clone();
+            elements[1] = factory.createWithDefaultDescription();
             elements[1].setName("BrainySmurf");
-        } catch (CloneNotSupportedException e) {
-        }
-        try {
-            elements[2] = heroWithDefaultDescription.clone();
+            elements[2] = factory.createWithDefaultDescription();
             elements[2].setName("HeftySmurf");
-        } catch (CloneNotSupportedException e) {
-        }
-        try {
-            elements[3] = heroWithDefaultDescription.clone();
+            elements[3] = factory.createWithDefaultDescription();
             elements[3].setName("Smurfette");
-        } catch (CloneNotSupportedException e) {
-        }
     }
 
     @Override
