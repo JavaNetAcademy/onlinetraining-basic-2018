@@ -14,6 +14,7 @@ import com.hoe.core.BaseRepository;
  */
 public class AbilityRepository  extends BaseObjectRepository<Ability> implements BaseRepository<Ability>{
    private static AbilityRepository  instance;
+   private AbilityFactory factory = new AbilityFactory();
     static {
         instance = new AbilityRepository();
     }
@@ -25,9 +26,9 @@ public class AbilityRepository  extends BaseObjectRepository<Ability> implements
 
     {
         elements = new Ability[3] ;
-        elements[0] = new Ability("magic",(byte)10,(byte)20,(byte)30);
-        elements[1] = new Ability("Teamwork",(byte)20,(byte)30,(byte)40);
-        elements[2] = new Ability("Smell",(byte)10,(byte)20,(byte)30);
+        elements[0] = factory.createWithDefaultValues().builder().name("magic").build();
+        elements[1] = factory.createWithDefaultValues().builder().name("Teamwork").build();
+        elements[2] = factory.createWithDefaultValues().builder().name("Smell").build();
     }
     
 

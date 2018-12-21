@@ -53,6 +53,43 @@ public class Ability extends BasicData implements Cloneable{
         return new Ability(name, attack, protect, clever);
     }
     
+    public Builder builder(){return new Builder(this);}
+    
+    public static class Builder{
+        private Ability ability;
+
+        public Builder(Ability ability) {
+            this.ability = ability;
+        }
+        
+  
+  
+    public Builder attack(byte attack) {
+        this.ability.setAttack(attack);
+        return this;
+    }
+
+  
+    public Builder protect(byte protect) {
+        this.ability.setProtect(protect);
+        return this;
+    }
+
+  
+    public Builder clever(byte clever) {
+        this.ability.setClever(clever);
+        return this;
+    }
+      
+    
+    public Builder name(String pName) {
+        this.ability.setName(pName);
+        return this;
+    }
+        public Ability build(){return this.ability;}
+        
+    
+    }
     
     
 }

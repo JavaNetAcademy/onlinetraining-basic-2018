@@ -27,14 +27,11 @@ private SpeciesFactory factory = new SpeciesFactory();
 
     {
         elements = new Species[3] ;
-        elements[0] = factory.createEmpty();
-        elements[0].setName("Smurf");
+        elements[0] = factory.createEmpty().builder().name("Smurf").build();
         
-        elements[1] = factory.createEmpty();
-        elements[1].setName("Orc");
+        elements[1] = factory.createEmpty().builder().name("Orc").build();
         
-        elements[2] = factory.createEmpty();
-        elements[2].setName("Human");
+        elements[2] = factory.createEmpty().builder().name("Human").build();
     }
     
 

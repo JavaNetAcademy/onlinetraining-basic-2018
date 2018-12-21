@@ -1,9 +1,6 @@
 package com.hoe.hero;
 
 import com.hoe.core.BaseFactory;
-import com.hoe.core.BasicData;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

@@ -24,6 +24,24 @@ public class Species extends BasicData implements Cloneable{
     public Species clone() throws CloneNotSupportedException {
         return new Species(name);
     }
+    
+    public Builder builder(){return new Builder(this);}
 
+    public static class Builder{
+        private Species species;
+
+        public Builder(Species species) {
+            this.species = species;
+        }
+        
+        public Builder name(String pName){
+            this.species.setName(pName);
+            return this;
+        }
+        
+        public Species build(){
+            return this.species;
+        }
+    }
     
 }
