@@ -5,8 +5,8 @@
  */
 package com.hoe.hero;
 
-import com.hoe.cli.BaseObjectRepository;
-import com.hoe.cli.BaseRepository;
+import com.hoe.core.BaseObjectRepository;
+import com.hoe.core.BaseRepository;
 
 /**
  *

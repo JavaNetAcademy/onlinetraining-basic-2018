@@ -5,7 +5,7 @@
  */
 package com.hoe.hero;
 
-import com.hoe.cli.BasicData;
+import com.hoe.core.BasicData;
 
 /**
  *

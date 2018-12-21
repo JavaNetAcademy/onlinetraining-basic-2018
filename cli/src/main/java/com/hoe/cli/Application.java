@@ -5,6 +5,8 @@
  */
 package com.hoe.cli;
 
+import com.hoe.species.Species;
+import com.hoe.species.SpeciesRepository;
 import com.hoe.hero.HeroRepository;
 
 /**

@@ -3,20 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hoe.cli;
+package com.hoe.core;
 
 /**
  *
  * @author netacademia
  */
-public class Species extends BasicData{
-
-    public Species() {
-    }
-
-    public Species(String name) {
-        super(name);
-    }
-
-     
+public interface BaseRepository<T> {
+    public T[] getElements();
 }
