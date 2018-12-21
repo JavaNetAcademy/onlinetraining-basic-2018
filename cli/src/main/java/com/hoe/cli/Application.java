@@ -38,12 +38,13 @@ public class Application {
     public static void main(String[] args) {
         
        heroService.getElements()[0].setDescription("????????????????");
-
+ 
         System.out.println(HeroRepository.getInstance().getElements()[0].getDescription());
         
         byte i=0;
         do {            
-            System.out.println(HeroRepository.getInstance().getElements()[i].getName());            
+            System.out.print(HeroRepository.getInstance().getElements()[i].getName()+" - ");            
+            System.out.println(HeroRepository.getInstance().getElements()[i].getDescription());            
             i++;         
         } while (i<HeroRepository.getInstance().getElements().length);
         

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.hoe.hero;
- 
+
 import com.hoe.core.BaseObjectRepository;
 import com.hoe.core.BaseRepository;
 
@@ -12,10 +12,12 @@ import com.hoe.core.BaseRepository;
  *
  * @author netacademia
  */
-public class HeroRepository  extends BaseObjectRepository<Hero> implements BaseRepository<Hero>{
-   
-    private static HeroRepository  instance;
-    
+public class HeroRepository extends BaseObjectRepository<Hero> implements BaseRepository<Hero> {
+
+    private static final Hero heroWithDefaultDescription = new Hero("", "DEF. DESC");
+
+    private static HeroRepository instance;
+
     static {
         instance = new HeroRepository();
     }
@@ -23,21 +25,34 @@ public class HeroRepository  extends BaseObjectRepository<Hero> implements BaseR
     public static HeroRepository getInstance() {
         return instance;
     }
-    
-    
-    
+
     {
-        elements = new Hero[4] ;
-        elements[0] = new Hero("PapaSmurf", ".....");
-        elements[1] = new Hero("BrainySmurf", ".....");
-        elements[2] = new Hero("HeftySmurf", ".....");
-        elements[3] = new Hero("Smurfette", ".....");
+        elements = new Hero[4];
+        try {
+            elements[0] = heroWithDefaultDescription.clone();
+            elements[0].setName("PapaSmurf");
+        } catch (CloneNotSupportedException e) {
+        }
+        try {
+            elements[1] = heroWithDefaultDescription.clone();
+            elements[1].setName("BrainySmurf");
+        } catch (CloneNotSupportedException e) {
+        }
+        try {
+            elements[2] = heroWithDefaultDescription.clone();
+            elements[2].setName("HeftySmurf");
+        } catch (CloneNotSupportedException e) {
+        }
+        try {
+            elements[3] = heroWithDefaultDescription.clone();
+            elements[3].setName("Smurfette");
+        } catch (CloneNotSupportedException e) {
+        }
     }
-    
 
     @Override
     public Hero[] getElements() {
-       return elements;    
+        return elements;
     }
-    
+
 }

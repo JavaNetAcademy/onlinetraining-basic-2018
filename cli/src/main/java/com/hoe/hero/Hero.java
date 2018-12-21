@@ -11,7 +11,7 @@ import com.hoe.core.BasicData;
  *
  * @author netacademia
  */
-public class Hero extends BasicData{
+public class Hero extends BasicData implements Cloneable{
     private String description;
 
     public Hero() {}
@@ -30,7 +30,16 @@ public class Hero extends BasicData{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public Hero clone() throws CloneNotSupportedException {
+        return new Hero(name, description);
+    }
+
      
+    
+    
+    
     
     
 }
